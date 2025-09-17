@@ -21,12 +21,11 @@ def main():
             fs = time.time()
             while i <= k:
                 for m in range(i,i+1):
-                
-                    print(m,end=" ")
+                    st.write(m,end=" ")
                     time.sleep(1)
                 i = i+1
             fd = time.time()
-            print(fs-fd)
+            st.write(fs-fd)
             sound_file = "https://www.soundjay.com/button/beep-07.wav"
             st.audio(sound_file, format="audio/wav")
         except Exception as e :
