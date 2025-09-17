@@ -7,7 +7,28 @@ def main():
     d = st.sidebar.text_input("Enter The Unit (sec/min/hour):")
 
     if k is not None and d is not None :
-        st.write(d,k)
+        try:
+            if d.lower() == "sec" :
+                k = k
+            elif d.lower() == "min" :
+                k = k*60
+            elif d.lower() == "hour" :
+                k = k*60*60
+
+            i =1
+            fs = time.time()
+            while i <= k:
+                for m in range(i,i+1):
+                
+                    print(m,end=" ")
+                    time.sleep(1)
+                i = i+1
+            fd = time.time()
+            print(fs-fd)
+            sound_file = "https://www.soundjay.com/button/beep-07.wav"
+            st.audio(sound_file, format="audio/wav")
+        except Exception as e :
+            st.write(e)
 
 if __name__ == "__main__":
     main()
