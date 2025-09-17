@@ -10,6 +10,8 @@ def main():
 
     if k is not None and d is not None :
         try:
+            with st.spinner("Processing..."):
+                st.write("Hi!")
             if d.lower() == "sec" :
                 k = k
             elif d.lower() == "min" :
@@ -21,13 +23,17 @@ def main():
             fs = time.time()
             while i <= k:
                 for m in range(i,i+1):
-                    st.write(m,end=" ")
+                    st.write(m,end=" "    )
                     time.sleep(1)
                 i = i+1
             fd = time.time()
             st.write(fs-fd)
-            sound_file = "https://www.soundjay.com/button/beep-07.wav"
-            st.audio(sound_file, format="audio/wav")
+            st.markdown(
+                """
+                <audio autoplay>
+                D:\MyWork\Python_Learning\Timer\beep-329314.mp3
+                </audio>
+                """,unsafe_allow_html=True)
         except Exception as e :
             st.write(e)
 
