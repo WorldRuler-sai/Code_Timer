@@ -5,7 +5,7 @@ import time
 def main():
     st.title("TIMER")
     st.sidebar.title("Timer Details:")
-    k = st.sidebar.number_input("Enter the Timer Duration:")
+    k =  st.sidebar.number_input("Enter the Timer Duration:",step=1,max_value=60)
     d = st.sidebar.text_input("Enter The Unit (sec/min/hour):")
 
     if k is not None and d is not None :
