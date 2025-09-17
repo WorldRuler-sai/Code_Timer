@@ -5,11 +5,13 @@ import time
 def main():
     st.title("TIMER")
     st.sidebar.title("Timer Details:")
+    st.write("<--Open The SideBar")
     k =  st.sidebar.number_input("Enter the Timer Duration:",step=1,max_value=60)
     d = st.sidebar.text_input("Enter The Unit (sec/min/hour):")
 
     if k is not None and d is not None :
         try:
+            st.write.success("Input Is Getting Proccessed")
             with st.spinner("Processing..."):
                 st.write("Hi!")
             if d.lower() == "sec" :
@@ -18,16 +20,15 @@ def main():
                 k = k*60
             elif d.lower() == "hour" :
                 k = k*60*60
+            else :
+                st.write("Please enter the Data!")
 
             i =1
-            fs = time.time()
             while i <= k:
                 for m in range(i,i+1):
                     st.write(m,end=" "    )
                     time.sleep(1)
                 i = i+1
-            fd = time.time()
-            st.write(fs-fd)
             st.markdown(
                 """
                 <audio autoplay>
