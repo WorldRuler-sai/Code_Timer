@@ -11,7 +11,7 @@ def main():
 
     if k is not None and d is not None :
         try:
-            st.write.success("Input Is Getting Proccessed")
+            st.success.write("Input Is Getting Proccessed")
             with st.spinner("Processing..."):
                 st.write("Hi!")
             if d.lower() == "sec" :
